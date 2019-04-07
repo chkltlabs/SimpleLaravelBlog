@@ -1,0 +1,371 @@
+
+.top-bar {
+  overflow: hidden;
+  height: 45px;
+  line-height: 45px;
+  position: relative;
+  background: $dark-background;
+  margin-bottom: 0;
+  ul {
+    margin-bottom: 0;
+    list-style: none;
+  }
+  .row {
+    max-width: none;
+  }
+  form, input {
+    margin-bottom: 0;
+  }
+  input {
+    height: auto;
+    padding-top: .35rem;
+    padding-bottom: .35rem;
+    font-size: 0.75rem;
+  }
+  .button, button {
+    padding-top: .45rem;
+    padding-bottom: .35rem;
+    margin-bottom: 0;
+    font-size: 0.75rem;
+  }
+  .title-area {
+    position: relative;
+    margin: 0;
+  }
+  .name {
+    height: 45px;
+    margin: 0;
+    font-size: 16px;
+    h1 {
+       line-height: 45px;
+       font-size: 1.0625rem;
+       margin: 0;
+       a {
+         font-weight: normal;
+         color: white;
+         width: 100%;
+         display: block;
+         padding: 0 15px;
+       }
+     }
+    h2 {
+      line-height: 45px;
+      font-size: 1.0625rem;
+      margin: 0;
+
+      a {
+        font-weight: normal;
+        color: white;
+        width: 100%;
+        display: block;
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+.alert-box {
+  border-style: solid;
+  border-width: 1px;
+  display: block;
+  font-weight: normal;
+  margin-bottom: 1.25rem;
+  position: relative;
+  padding: 0.875rem 1.5rem 0.875rem 0.875rem;
+  font-size: 0.8125rem;
+  transition: opacity 3000ms ease-in-out;
+  background-color: $alert-default;
+  border-color: $alert-border;
+  color: white;
+  .close{
+    font-size: 1.375rem;
+    padding: 9px 6px 4px;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    margin-top: -0.6875rem;
+    right: 0.25rem;
+    color: #333333;
+    opacity: 0;
+  }
+  &.success {
+    background-color: $success;
+    border-color: $success-border;
+    color: white;
+  }
+  &.alert {
+    background-color: $error-color;
+    border-color: $alert-alert;
+    color: white;
+  }
+  &.warning {
+    background-color: $alert-warning;
+    border-color: $alert-warn-bord;
+    color: white;
+  }
+
+}
+button, .button {
+  border-style: solid;
+  border-width: 0;
+  cursor: pointer;
+  font-family: $helvetica-stack;
+  font-weight: normal;
+  line-height: normal;
+  margin: 0 0 1.25rem;
+  position: relative;
+  text-decoration: none;
+  text-align: center;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  display: inline-block;
+  padding: 1rem 2rem 1.0625rem;
+  font-size: 1rem;
+  background-color: $alert-default;
+  border-color: $button-reg;
+  color: white;
+  transition: background-color 300ms ease-out;
+  &:hover, &:focus {
+    background-color: $button-reg;
+  }
+  &.success {
+    background-color: $success;
+    border-color: $success-button;
+    &:hover, &:focus {
+      background-color: $success-button;
+    }
+  }
+  &.alert {
+    background-color: $error-color;
+    border-color: $alert-button;
+    &:hover, &:focus {
+    background-color: $alert-button;
+    }
+  }
+  &.tiny {
+    padding: 0.625rem 1.25rem 0.6875rem;
+    font-size: 0.6875rem;
+  }
+}
+
+.button-group {
+  list-style: none;
+  margin: 0;
+  left: 0;
+  &:before, &:after{
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  > li {
+    margin: 0;
+    float: left;
+    > button, .button {
+      border-left: 1px solid;
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+    &:first-child {
+      margin-left: 0;
+    }
+    &:first-child button, &:first-child .button{
+      border-left: 0;
+    }
+  }
+}
+.row {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 62.5rem;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  .row {
+    width: auto;
+    margin: 0 -0.9375rem;
+    max-width: none;
+    &:before, &:after {
+      content: " ";
+      display: table;
+    }
+    &:after {
+      clear: both;
+    }
+  }
+}
+
+.columns {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left;
+
+}
+
+.large {
+  &-12{
+    width: 100%;
+  }
+  &-6{
+    width: 50%;
+  }
+}
+
+.error {
+  input, textarea, select {
+    margin-bottom: 0;
+  }
+  input[type="checkbox"], input[type="radio"]{
+    margin-bottom: 1rem;
+  }
+  label, label.error {
+    color: $error-color;
+  }
+  &.error {
+    display: block;
+    padding: 0.375rem 0.5625rem 0.5625rem;
+    margin-top: -1px;
+    margin-bottom: 1rem;
+    font-size: 0.75rem;
+    font-weight: normal;
+    font-style: italic;
+    background: $error-color;
+    color: white;
+  }
+  > label > small {
+    color: $label-small;
+    background: transparent;
+    padding: 0;
+    text-transform: capitalize;
+    font-style: normal;
+    font-size: 60%;
+    margin: 0;
+    display: inline;
+  }
+  input.error, textarea.error {
+    margin-bottom: 0;
+  }
+  label.error {
+    color: $error-color;
+  }
+}
+
+.login {
+  float: right;
+}
+
+
+html, body{
+  height: 100%;
+  font-size: 100%;
+}
+
+body{
+  background: white;
+  color: $body-text-color;
+  padding: 0;
+  margin: 0;
+  font-family: $helvetica-stack;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  position: relative;
+  cursor: default;
+}
+
+p{
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  text-rendering: optimizeLegibility;
+  &.tiny{
+    font-size: .75rem;
+  }
+}
+
+ul{
+  &.no-bullet{
+    margin-left: 0;
+    list-style: none;
+    li {
+      ul, ol {
+        margin-left: 1.25rem;
+        margin-bottom: 0;
+        list-style: none;
+      }
+    }
+  }
+}
+
+form{
+  margin: 0 0 1rem;
+  .row {
+    .row .columns{
+      padding: 0 0.5rem;
+    }
+    input.columns, textarea.columns{
+      padding-left: 0.5rem;
+    }
+  }
+}
+
+label{
+  font-size: 0.875rem;
+  color: $label;
+  cursor: pointer;
+  display: block;
+  font-weight: normal;
+  line-height: 1.5;
+  margin-bottom: 0;
+
+}
+
+
+a {
+  color: $success-button;
+  text-decoration: none;
+  line-height: inherit;
+  &:hover, &:focus {
+    color: $success;
+  border: none;
+  }
+}
+
+pre{
+  font-family: $helvetica-stack;
+  white-space:pre-wrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+h1 {
+  font-size: 2.125rem; }
+
+h2 {
+  font-size: 1.6875rem; }
+
+h3 {
+  font-size: 1.375rem; }
+
+h4 {
+  font-size: 1.125rem; }
+
+h5 {
+  font-size: 1.125rem; }
+
+h6 {
+  font-size: 1rem; }
+
+i {
+  font-style: italic;
+  line-height: inherit;
+}
+
+
