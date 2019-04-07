@@ -674,27 +674,30 @@ button, .button {
   display: inline-block;
   padding: 1rem 2rem 1.0625rem;
   font-size: 1rem;
-  background-color: #008cba;
-  border-color: #007095;
+  background-color: #43ac6a;
+  border-color: #3a945b;
   color: white;
   transition: background-color 300ms ease-out;
 }
 button:hover, button:focus, .button:hover, .button:focus {
-  background-color: #007095;
+  background-color: white;
+  color: #3a945b;
 }
 button.success, .button.success {
   background-color: #43ac6a;
   border-color: #368a55;
 }
 button.success:hover, button.success:focus, .button.success:hover, .button.success:focus {
-  background-color: #368a55;
+  background-color: white;
+  color: #368a55;
 }
 button.alert, .button.alert {
-  background-color: #f04124;
+  background-color: #222222;
   border-color: #cf2a0e;
 }
 button.alert:hover, button.alert:focus, .button.alert:hover, .button.alert:focus {
   background-color: #cf2a0e;
+  color: white;
 }
 button.tiny, .button.tiny {
   padding: 0.625rem 1.25rem 0.6875rem;
@@ -719,7 +722,7 @@ button.tiny, .button.tiny {
 }
 .button-group > li > button, .button-group > li .button {
   border-left: 1px solid;
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: white;
 }
 .button-group > li:first-child {
   margin-left: 0;

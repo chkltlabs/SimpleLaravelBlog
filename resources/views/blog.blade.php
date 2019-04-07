@@ -9,19 +9,19 @@
         <li>
             <ul class="no-bullet button-group">
                 <h2><a href="{{{ route('posts.show', ['post' => $post->id]) }}}">{{{ $post->title }}}</a></h2>
+{{--                @if(Auth::id() == $post->user_id)--}}
+{{--                    <li>--}}
+{{--                        <a class="tiny button" href="{{route('posts.edit', ['post' => $post->id])}}">Edit</a>--}}
 
-                    <li>
-                        <a class="tiny button" href="{{route('posts.edit', ['post' => $post->id])}}">Edit</a>
-
-                    </li>
-                    <li>
-                        <form method="post" action="{{ route('posts.destroy', ['post' => $post->id]) }}">
-                            @method('delete')
-                            @csrf
-                            <input class="tiny alert button" type="submit" value="destroy">
-                        </form>
-                    </li>
-
+{{--                    </li>--}}
+{{--                    <li>--}}
+{{--                        <form method="post" action="{{ route('posts.destroy', ['post' => $post->id]) }}">--}}
+{{--                            @method('delete')--}}
+{{--                            @csrf--}}
+{{--                            <input class="tiny alert button" type="submit" value="destroy">--}}
+{{--                        </form>--}}
+{{--                    </li>--}}
+{{--                @endif--}}
                 </ul>
             </li>
         @foreach($users as $user)
