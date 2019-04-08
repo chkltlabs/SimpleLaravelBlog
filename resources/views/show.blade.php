@@ -17,7 +17,7 @@
                     <form method="post" action="{{ route('posts.destroy', ['post' => $post->id]) }}">
                         @method('delete')
                         @csrf
-                        <input class="tiny alert button" type="submit" value="destroy">
+                        <input class="tiny alert button" type="submit" value="Delete">
                     </form>
                 </li>
                 @endif
