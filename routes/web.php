@@ -15,7 +15,7 @@
 
 Route::get('/', 'PostController@index');
 Route::get('/all', 'PostController@index');
-Route::get('/user/{id}', 'PostController@all');
+Route::get('/user/{id}', 'PostController@allPosts');
 
 
 Route::resource('posts', 'PostController');

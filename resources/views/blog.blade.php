@@ -5,7 +5,9 @@
     <a class="success tiny button" href="{{ route('posts.create') }}">Write Something...</a>
     <ul class="no-bullet">
     @foreach($blog_posts as $post)
+<div class="box">
     <li>
+
         <li>
             <ul class="no-bullet button-group">
                 <h2><a href="{{{ route('posts.show', ['post' => $post->id]) }}}">{{{ $post->title }}}</a></h2>
@@ -30,8 +32,13 @@
             @endif
         @endforeach
         <pre>{{{ $post->body }}}</pre>
+        @php
+            $origCreateDate = date("F d, Y", strtotime(substr($post->created_at, 0, 10)));
+            $origUpdateDate = date("F d, Y", strtotime(substr($post->updated_at, 0, 10)));
+        @endphp
+        <p>Originally posted on {{$origCreateDate}}, last edited on {{$origUpdateDate}}</p>
     </li>
-
+</div>
     @endforeach
     </ul>
 @stop

@@ -553,6 +553,13 @@ th {
   padding: 0;
 }
 
+.box {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  padding: 8px;
+  margin-bottom: 25px;
+}
+
 .top-bar {
   overflow: hidden;
   height: 45px;
@@ -844,9 +851,10 @@ p.tiny {
 ul.no-bullet {
   margin-left: 0;
   list-style: none;
+  padding-inline-start: 0;
 }
 ul.no-bullet li ul, ul.no-bullet li ol {
-  margin-left: 1.25rem;
+  margin-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
@@ -886,6 +894,10 @@ pre {
   white-space: pre-wrap;
   overflow-x: auto;
   overflow-y: hidden;
+  padding-bottom: 14px;
+  margin-bottom: 20px;
+  margin-right: 40px;
+  border-bottom: black 1px solid;
 }
 
 h1 {
