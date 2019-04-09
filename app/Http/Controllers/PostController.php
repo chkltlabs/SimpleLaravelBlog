@@ -25,7 +25,7 @@ class PostController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function allPosts($id){
-        $posts = BlogPost::all();
+        $posts = $this->fixedPosts();
         $users = User::all();
         $output = array();
         foreach ($posts as $post){
@@ -106,18 +106,20 @@ class PostController extends Controller
     }
 
     /**
-     * Shows a single post and all its details
-     *
      * @param $post_id
      * @return mixed
+     * @throws \Exception
      */
     public function show($post_id)
     {
         $post = BlogPost::findOrFail($post_id);
         $user = User::findOrFail($post->user_id);
 
-        $origCreateDate = date("F d, Y", strtotime(substr($post->created_at, 0, 10)));
-        $origUpdateDate = date("F d, Y", strtotime(substr($post->updated_at, 0, 10)));
+        $unFormCreate = new \DateTime($post->created_at);
+        $unFormUpdate = new \DateTime($post->updated_at);
+        $origCreateDate = $unFormCreate->format("F d, Y");
+        $origUpdateDate = $unFormUpdate->format("F d, Y");
+
 
         return view('show')
             ->with('post', $post)

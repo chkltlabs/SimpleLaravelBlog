@@ -36,7 +36,7 @@
             $origCreateDate = date("F d, Y", strtotime(substr($post->created_at, 0, 10)));
             $origUpdateDate = date("F d, Y", strtotime(substr($post->updated_at, 0, 10)));
         @endphp
-        <p>Originally posted on {{$origCreateDate}}, last edited on {{$origUpdateDate}}</p>
+        <p>Originally posted on {{$origCreateDate}}@if($origCreateDate != $origUpdateDate), last edited on {{$origUpdateDate}}@endif</p>
     </li>
 </div>
     @endforeach
